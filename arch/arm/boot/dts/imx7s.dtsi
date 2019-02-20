@@ -969,7 +969,7 @@
 				clocks = <&clks IMX7D_UART7_ROOT_CLK>,
 					<&clks IMX7D_UART7_ROOT_CLK>;
 				clock-names = "ipg", "per";
-				status = "disabled"; // Dignsys
+				status = "disabled";
 			};
 
 			mu0a: mailbox@30aa0000 {
