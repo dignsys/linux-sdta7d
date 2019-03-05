@@ -241,21 +241,6 @@
         status = "okay";
 };
 
-&ecspi3 {
-	fsl,spi-num-chipselects = <1>;
-	cs-gpios = <&gpio4 11 GPIO_ACTIVE_LOW>;
-	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_ecspi3 &pinctrl_ecspi3_cs>;
-	status = "okay";
-
-	spidev@0 {
-		compatible = "rohm,dh2228fv";
-		spi-max-frequency = <60000000>;
-		reg = <0>;
-	};
-
-};
-
 &usdhc1 {
 	pinctrl-names = "default", "state_100mhz", "state_200mhz";
 	pinctrl-0 = <&pinctrl_usdhc1>;
@@ -307,24 +292,6 @@
         wakeup-source;
         vmmc-supply = <&reg_ap6335_bt>;
         status = "okay";
-};
-
-&pwm1 {
-	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_pwm1>;
-	status = "okay";
-};
-
-&pwm2 {
-	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_pwm2>;
-	status = "okay";
-};
-
-&pwm3 {
-	pinctrl-names = "default";
-	pinctrl-0 = <&pinctrl_pwm3>;
-	status = "okay";
 };
 
 &wdog1 {
@@ -456,38 +423,6 @@
                                 MX7D_PAD_SD2_RESET_B__GPIO5_IO11       0x55 /* bluetooth-host-wake */
                         >;
                 };
-
-		pinctrl_ecspi3: ecspi3grp {
-			fsl,pins = <
-				MX7D_PAD_I2C1_SCL__ECSPI3_MISO  0x2
-				MX7D_PAD_I2C1_SDA__ECSPI3_MOSI  0x2
-				MX7D_PAD_I2C2_SCL__ECSPI3_SCLK  0x2
-				>;
-		};
-
-		pinctrl_ecspi3_cs: ecspi3_cs_grp {
-			fsl,pins = <
-				MX7D_PAD_I2C2_SDA__GPIO4_IO11   0x80000000
-			>;
-		};
-
-		pinctrl_pwm1: pwm1 {
-			fsl,pins = <
-				MX7D_PAD_GPIO1_IO08__PWM1_OUT   0x7f
-			>;
-		};
-
-		pinctrl_pwm2: pwm2 {
-			fsl,pins = <
-				MX7D_PAD_GPIO1_IO09__PWM2_OUT   0x7f
-			 >;
-		};
-
-		pinctrl_pwm3: pwm3 {
-			fsl,pins = <
-				MX7D_PAD_GPIO1_IO10__PWM3_OUT   0x7f
-			>;
-		};
 
 		pinctrl_uart6: uart6grp {
 			fsl,pins = <
