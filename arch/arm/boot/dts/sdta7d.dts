@@ -118,13 +118,13 @@
 	status = "okay";
 
 	spidev0@0 {
-		compatible = "rohm,dh2228fv";
+		compatible = "linux,spidev";
 		spi-max-frequency = <60000000>;
 		reg = <0>;
 	};
 
 	spidev1@1 {
-		compatible = "rohm,dh2228fv";
+		compatible = "linux,spidev";
 		spi-max-frequency = <60000000>;
 		reg = <1>;
 	};
